@@ -1,10 +1,5 @@
 <template>
-  <q-drawer
-    v-model="leftDrawerOpen"
-    show-if-above
-    bordered
-    content-class="bg-grey-1"
-  >
+  <q-drawer v-model="drawer" show-if-above bordered content-class="bg-grey-1">
     <q-scroll-area class="fit">
       <q-img
         src="https://cdn.quasar.dev/img/material.png"
@@ -42,8 +37,17 @@
 
 <script>
 export default {
+  computed: {
+    drawer: {
+      get() {
+        return this.$store.getters['app/drawer']
+      },
+      set(arg) {
+        this.$store.commit('app/drawer', arg)
+      }
+    }
+  },
   data: () => ({
-    leftDrawerOpen: false,
     routes: [
       {
         title: 'Link 1',

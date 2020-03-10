@@ -1,8 +1,11 @@
+import auth from './auth'
+
 const routes = [
+  auth,
   {
     path: '/',
-    component: () => import('layouts/MainLayout.vue'),
-    children: [{ path: '', component: () => import('pages/Index.vue') }]
+    name: 'dashboard',
+    component: () => import('pages/Index.vue')
   }
 ]
 
