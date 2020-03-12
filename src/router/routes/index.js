@@ -1,7 +1,9 @@
 import auth from './auth'
+import keyword from './keyword'
 
 const routes = [
   auth,
+  keyword,
   {
     path: '/',
     name: 'dashboard',
