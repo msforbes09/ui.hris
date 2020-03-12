@@ -2,34 +2,30 @@
 export default {
   namespaced: true,
   state: {
-    showFormDialog: false,
-    showConfirmDialog: false,
-    confirmMessage: 'Are you sure?',
-    isFormEdit: false
+    createDialog: false,
+    editDialog: false,
+    deleteDialog: false,
   },
   mutations: {
     edit(state) {
-      state.isFormEdit = true
-      state.showFormDialog = true
+      state.editDialog = true
     },
     create(state) {
-      state.isFormEdit = false
-      state.showFormDialog = true
+      state.createDialog = true
     },
-    confirm(state, payload) {
-      state.confirmMessage = payload
-      state.showConfirmDialog = true
+    destroy(state) {
+      state.deleteDialog = true
     },
     closeDialogs(state) {
-      state.showFormDialog = false
-      state.showConfirmDialog = false
+      state.createDialog = false
+      state.editDialog = false
+      state.deleteDialog = false
     }
   },
   actions: {},
   getters: {
-    showFormDialog: state => state.showFormDialog,
-    showConfirmDialog: state => state.showConfirmDialog,
-    confirmMessage: state => state.confirmMessage,
-    isFormEdit: state => state.isFormEdit
+    createDialog: state => state.createDialog,
+    editDialog: state => state.editDialog,
+    deleteDialog: state => state.deleteDialog
   }
 }

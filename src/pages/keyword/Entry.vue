@@ -4,7 +4,8 @@
       <router-view />
     </q-page>
 
-    <form-dialog />
+    <create-dialog />
+    <edit-dialog />
     <confirm-dialog />
   </layout>
 </template>
@@ -13,8 +14,9 @@
 export default {
   components: {
     layout: () => import('layouts/MainLayout'),
-    formDialog: () => import('./FormDialog'),
-    confirmDialog: () => import('./ConfirmDialog')
+    createDialog: () => import('./Create'),
+    editDialog: () => import('./Edit'),
+    confirmDialog: () => import('./Delete')
   }
 }
 </script>

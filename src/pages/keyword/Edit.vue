@@ -3,7 +3,7 @@
     <q-card style="width: 600px">
 
       <q-card-section class="row items-center q-pb-none">
-        <div class="text-h6">{{isEdit ? 'Edit ' : ''}}Keyword Value</div>
+        <div class="text-h6">Edit Keyword Value</div>
         <q-space />
         <q-btn @click="close" icon="close" flat round dense />
       </q-card-section>
@@ -14,7 +14,7 @@
 
       <q-card-actions>
         <q-space />
-        <q-btn>{{isEdit ? 'Save ' : 'Submit'}}</q-btn>
+        <q-btn>Submit</q-btn>
       </q-card-actions>
     </q-card>
   </q-dialog>
@@ -24,10 +24,7 @@
 export default {
   computed: {
     visible () {
-      return this.$store.getters['keyword/showFormDialog']
-    },
-    isEdit () {
-      return this.$store.getters['keyword/isFormEdit']
+      return this.$store.getters['keyword/editDialog']
     }
   },
   methods: {

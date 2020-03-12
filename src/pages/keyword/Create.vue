@@ -1,21 +1,21 @@
 <template>
-  <q-dialog v-model="visible">
-    <q-card style="width: 300px">
+  <q-dialog v-model="visible" persistent>
+    <q-card style="width: 600px">
 
       <q-card-section class="row items-center q-pb-none">
-        <div class="text-h6">Confirmation</div>
+        <div class="text-h6">Keyword Value</div>
+        <q-space />
+        <q-btn @click="close" icon="close" flat round dense />
       </q-card-section>
 
       <q-card-section>
-        <p>{{message}}</p>
+          <q-input outlined v-model="value" label="Keyword Value" />
       </q-card-section>
 
       <q-card-actions>
         <q-space />
-        <q-btn @click="close">Confirm</q-btn>
-        <q-btn @click="close">Cancel</q-btn>
+        <q-btn>Submit</q-btn>
       </q-card-actions>
-
     </q-card>
   </q-dialog>
 </template>
@@ -24,10 +24,7 @@
 export default {
   computed: {
     visible () {
-      return this.$store.getters['keyword/showConfirmDialog']
-    },
-    message () {
-      return this.$store.getters['keyword/confirmMessage']
+      return this.$store.getters['keyword/createDialog']
     }
   },
   methods: {
