@@ -55,9 +55,9 @@ export default {
         path: '/users'
       },
       {
-        title: 'Link 2',
+        title: 'Keywords',
         icon: 'link',
-        path: '#'
+        path: '/keywords'
       },
       {
         title: 'Link 3',
