@@ -25,7 +25,7 @@
         <div class="col">
 
           <div class="row justify-end q-pa-lg">
-            <q-btn @click="formDialog = true">Create</q-btn>
+            <q-btn @click="create">Create</q-btn>
           </div>
 
           <q-tab-panels
@@ -45,8 +45,8 @@
                     </q-item-section>
                     <q-item-section>
                       <div class="row justify-center">
-                        <q-btn @click="formDialog = true">Edit</q-btn>
-                        <q-btn @click="confirmDialog = true">Delete</q-btn>
+                        <q-btn @click="edit">Edit</q-btn>
+                        <q-btn @click="destroy">Delete</q-btn>
                       </div>
                     </q-item-section>
                   </q-item>
@@ -59,46 +59,6 @@
       </q-card-section>
     </q-card>
 
-    <q-dialog v-model="formDialog" persistent>
-      <q-card style="width: 600px">
-
-        <q-card-section class="row items-center q-pb-none">
-          <div class="text-h6">Keyword Value</div>
-          <q-space />
-          <q-btn icon="close" flat round dense v-close-popup />
-        </q-card-section>
-
-        <q-card-section>
-           <q-input outlined v-model="value" label="Keyword Value" />
-        </q-card-section>
-
-        <q-card-actions>
-          <q-space />
-          <q-btn>Submit</q-btn>
-        </q-card-actions>
-      </q-card>
-    </q-dialog>
-
-    <q-dialog v-model="confirmDialog">
-      <q-card style="width: 300px">
-
-        <q-card-section class="row items-center q-pb-none">
-          <div class="text-h6">Delete Confirmation</div>
-        </q-card-section>
-
-        <q-card-section>
-          <p>Are you sure you want to delete?</p>
-        </q-card-section>
-
-        <q-card-actions>
-          <q-space />
-          <q-btn v-close-popup>Confirm</q-btn>
-          <q-btn v-close-popup>Cancel</q-btn>
-        </q-card-actions>
-
-      </q-card>
-    </q-dialog>
-
   </div>
 </template>
 
@@ -106,9 +66,18 @@
 export default {
   data: () => ({
     tab: 1,
-    formDialog: false,
-    confirmDialog: false,
-  })
+  }),
+  methods: {
+    create () {
+      this.$store.commit('keyword/create')
+    },
+    edit () {
+      this.$store.commit('keyword/edit')
+    },
+    destroy () {
+      this.$store.commit('keyword/confirm', 'Are you sure you want to delete?')
+    }
+  }
 }
 </script>
 

@@ -5,7 +5,7 @@ export default {
       {
         path: '',
         name: 'keywordList',
-        component: () => import('pages/keyword/List.vue')
+        component: () => import('pages/keyword/Index.vue')
       }
     ]
 }
