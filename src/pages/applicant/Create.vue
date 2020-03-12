@@ -85,7 +85,7 @@
         <q-stepper-navigation class="row">
           <q-btn v-if="step > 1" flat color="primary" @click="$refs.stepper.previous()" label="Previous" class="q-ml-sm" />
           <q-space />
-          <q-btn @click="$refs.stepper.next()" color="primary" :label="step === 3 ? 'Finish' : 'Next'" />
+          <q-btn :to="step === 3 ? '/applicants' : '#'" @click="$refs.stepper.next()" color="primary" :label="step === 3 ? 'Finish' : 'Next'" />
         </q-stepper-navigation>
       </template>
 
