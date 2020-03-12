@@ -50,6 +50,16 @@ export default {
   data: () => ({
     routes: [
       {
+        title: 'Applicants',
+        icon: 'link',
+        path: '/applicants/dashboard'
+      },
+      {
+        title: 'Keywords',
+        icon: 'link',
+        path: '/keywords'
+      },
+      {
         title: 'Users',
         icon: 'link',
         path: '/users'
