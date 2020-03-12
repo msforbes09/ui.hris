@@ -1,9 +1,11 @@
 import auth from './auth'
 import keyword from './keyword'
+import users from './users'
 import applicant from './applicant'
 
 const routes = [
   auth,
+  users,
   keyword,
   applicant,
   {

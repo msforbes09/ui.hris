@@ -50,9 +50,9 @@ export default {
   data: () => ({
     routes: [
       {
-        title: 'Link 1',
+        title: 'Users',
         icon: 'link',
-        path: '#'
+        path: '/users'
       },
       {
         title: 'Link 2',
