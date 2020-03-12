@@ -13,7 +13,7 @@ export default {
     create(state) {
       state.createDialog = true
     },
-    destroy(state) {
+    delete(state) {
       state.deleteDialog = true
     },
     closeDialogs(state) {

@@ -75,7 +75,7 @@ export default {
       this.$store.commit('keyword/edit')
     },
     destroy () {
-      this.$store.commit('keyword/destroy')
+      this.$store.commit('keyword/delete')
     }
   }
 }
