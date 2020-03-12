@@ -1,9 +1,12 @@
 import auth from './auth'
+import keyword from './keyword'
 import users from './users'
 
 const routes = [
   auth,
   users,
+  keyword,
+
   {
     path: '/',
     name: 'dashboard',

@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 
 import app from './modules/app'
 import auth from './modules/auth'
+import keyword from './modules/keyword'
 
 Vue.use(Vuex)
 
@@ -19,7 +20,8 @@ export default function(/* { ssrContext } */) {
   const Store = new Vuex.Store({
     modules: {
       app,
-      auth
+      auth,
+      keyword
     },
 
     // enable strict mode (adds overhead!)
