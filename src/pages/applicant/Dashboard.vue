@@ -27,7 +27,7 @@
 
         <q-card class="q-mb-lg">
           <q-card-section>
-            <div class="text-subtitle1">Create New Application</div>
+            <div class="text-subtitle1" to="/applicants/existing">Check for Existing Record</div>
           </q-card-section>
           <q-card-section>
             <div class="row justify-between">
@@ -60,7 +60,7 @@
                 <th>Date Applied</th>
               </thead>
               <tbody>
-                <tr v-for="item in 10" :key="item">
+                <tr v-for="item in 10" :key="item" @click="$router.push('/applicants/profile')">
                   <td>Dela Cruz, Juan</td>
                   <td>SRI/Head Office</td>
                   <td>09876543210</td>
@@ -105,5 +105,9 @@ Coloring boxes
 .status-box .content .right {
   width: 70%;
   text-align: center;
+}
+
+tr:hover {
+  cursor: pointer;
 }
 </style>

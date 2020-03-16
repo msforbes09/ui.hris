@@ -12,7 +12,7 @@
     <q-card>
       <q-card-section>
         <div class="row">
-          <q-btn>Create Application</q-btn>
+          <q-btn @click="check">New Application</q-btn>
           <q-space />
           <div class="row q-gutter-lg">
             <q-input outlined label="Search" icon="search">
@@ -26,7 +26,13 @@
       </q-card-section>
       <q-card-section>Filter: []</q-card-section>
       <q-card-section>
-        <q-table flat :data="data" :columns="columns" row-key="name" />
+        <q-table flat :data="data" :columns="columns" row-key="name">
+         <template v-slot:body="props">
+            <q-td key="name" :props="props">
+              <q-badge color="blue" :label="props.value" />
+            </q-td>
+          </template>
+        </q-table>
       </q-card-section>
     </q-card>
   </div>
@@ -60,6 +66,11 @@ export default {
       }
 
       return d;
+    }
+  },
+  methods: {
+    check () {
+      this.$store.commit('applicant/check')
     }
   }
 }

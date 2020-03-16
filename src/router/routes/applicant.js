@@ -21,6 +21,11 @@ export default {
       path: 'create',
       name: 'createApplicant',
       component: () => import('pages/applicant/Create.vue')
+    },
+    {
+      path: 'profile',
+      name: 'applicantProfile',
+      component: () => import('pages/applicant/Profile.vue')
     }
   ]
 }
