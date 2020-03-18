@@ -5,6 +5,7 @@ import app from './modules/app'
 import auth from './modules/auth'
 import keyword from './modules/keyword'
 import applicant from './modules/applicant'
+import application from './modules/application'
 
 Vue.use(Vuex)
 
@@ -23,7 +24,8 @@ export default function(/* { ssrContext } */) {
       app,
       auth,
       keyword,
-      applicant
+      applicant,
+      application
     },
 
     // enable strict mode (adds overhead!)

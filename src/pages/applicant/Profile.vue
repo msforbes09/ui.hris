@@ -371,7 +371,7 @@
                 <th></th>
               </thead>
               <tbody>
-                <tr>
+                <tr class="clickable" @click="$router.push('/applications/id')">
                   <td>12345</td>
                   <td>Client Name</td>
                   <td>Client Branch</td>
@@ -447,3 +447,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.clickable:hover {
+  cursor: pointer;
+}
+</style>
