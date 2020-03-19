@@ -55,6 +55,11 @@ export default {
         path: '/applicants/dashboard'
       },
       {
+        title: 'Clients',
+        icon: 'link',
+        path: '/clients'
+      },
+      {
         title: 'Keywords',
         icon: 'link',
         path: '/keywords'
@@ -63,11 +68,6 @@ export default {
         title: 'Users',
         icon: 'link',
         path: '/users'
-      },
-      {
-        title: 'Link 2',
-        icon: 'link',
-        path: '#'
       },
       {
         title: 'Link 3',

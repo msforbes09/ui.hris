@@ -3,6 +3,7 @@ import keyword from './keyword'
 import users from './users'
 import applicant from './applicant'
 import application from './application'
+import client from './client'
 
 const routes = [
   auth,
@@ -10,6 +11,7 @@ const routes = [
   keyword,
   applicant,
   application,
+  client,
   {
     path: '/',
     name: 'dashboard',

@@ -17,6 +17,7 @@ export default {
     editOtherDialog: false,
     editSSNumbersDialog: false,
     editEmergencyDialog: false,
+    filterDialog: false,
     deleteDialog: false
   },
   mutations: {
@@ -68,6 +69,9 @@ export default {
     delete(state) {
       state.deleteDialog = true
     },
+    filter(state) {
+      state.filterDialog = true
+    },
     closeDialogs(state) {
       state.checkDialog = false
       state.createFamilyDialog = false
@@ -85,6 +89,7 @@ export default {
       state.editSSNumbersDialog = false
       state.editEmergencyDialog = false
       state.deleteDialog = false
+      state.filterDialog = false
     }
   },
   actions: {},
@@ -104,6 +109,7 @@ export default {
     editOtherDialog: state => state.editOtherDialog,
     editSSNumbersDialog: state => state.editSSNumbersDialog,
     editEmergencyDialog: state => state.editEmergencyDialog,
-    deleteDialog: state => state.deleteDialog
+    deleteDialog: state => state.deleteDialog,
+    filterDialog: state => state.filterDialog
   }
 }

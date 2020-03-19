@@ -20,6 +20,7 @@
     <edit-ssnumbers-dialog />
     <edit-emergency-dialog />
     <delete-dialog />
+    <filter-dialog />
   </layout>
 </template>
 
@@ -42,7 +43,8 @@ export default {
     editOtherDialog: () => import('./EditOther'),
     editSsnumbersDialog: () => import('./EditSSNumbers'),
     editEmergencyDialog: () => import('./EditEmergency'),
-    deleteDialog: () => import('./Delete')
+    deleteDialog: () => import('./Delete'),
+    filterDialog: () => import('./Filter')
   }
 }
 </script>

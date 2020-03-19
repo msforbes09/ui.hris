@@ -20,19 +20,13 @@
                 <q-icon name="search" />
               </template>
             </q-input>
-            <q-btn>Filter</q-btn>
+            <q-btn @click="filter">Filter</q-btn>
           </div>
         </div>
       </q-card-section>
       <q-card-section>Filter: []</q-card-section>
       <q-card-section>
-        <q-table flat :data="data" :columns="columns" row-key="name">
-         <template v-slot:body="props">
-            <q-td key="name" :props="props">
-              <q-badge color="blue" :label="props.value" />
-            </q-td>
-          </template>
-        </q-table>
+        <q-table flat :data="data" :columns="columns" row-key="id"></q-table>
       </q-card-section>
     </q-card>
   </div>
@@ -56,6 +50,7 @@ export default {
 
       for(var i=0;i<100;i++) {
         d.push({
+          id: i,
           name: 'Dela Cruz, Juan',
           client_branch: 'SRI/Head Office',
           contact: '09876543210',
@@ -71,6 +66,9 @@ export default {
   methods: {
     check () {
       this.$store.commit('applicant/check')
+    },
+    filter () {
+      this.$store.commit('applicant/filter')
     }
   }
 }
