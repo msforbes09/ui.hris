@@ -4,6 +4,7 @@ import users from './users'
 import applicant from './applicant'
 import application from './application'
 import client from './client'
+import requirement_template from './requirement_template'
 
 const routes = [
   auth,
@@ -12,6 +13,7 @@ const routes = [
   applicant,
   application,
   client,
+  requirement_template,
   {
     path: '/',
     name: 'dashboard',

@@ -70,14 +70,9 @@ export default {
         path: '/users'
       },
       {
-        title: 'Link 3',
+        title: 'Requirement Templates',
         icon: 'link',
-        path: '#'
-      },
-      {
-        title: 'Link 4',
-        icon: 'link',
-        path: '#'
+        path: '/requirement-templates'
       }
     ]
   })

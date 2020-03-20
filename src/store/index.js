@@ -7,6 +7,7 @@ import keyword from './modules/keyword'
 import applicant from './modules/applicant'
 import application from './modules/application'
 import client from './modules/client'
+import requirement_template from './modules/requirement_template'
 
 Vue.use(Vuex)
 
@@ -27,7 +28,8 @@ export default function(/* { ssrContext } */) {
       keyword,
       applicant,
       application,
-      client
+      client,
+      requirement_template
     },
 
     // enable strict mode (adds overhead!)
