@@ -1,6 +1,26 @@
 <template>
   <div class="q-pa-md">
-    <q-table :data="data" :columns="columns" row-key="name" flat />
+    <q-table :data="data" :columns="columns" row-key="avatar" flat>
+      <template v-slot:body-cell-name="props">
+        <q-td :props="props" class="cursor-pointer text-bold text-blue">
+          {{ props.value }}
+        </q-td>
+      </template>
+
+      <template v-slot:body-cell-avatar="props">
+        <q-td :props="props">
+          <q-avatar size="35px" class="q-mb-sm">
+            <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
+          </q-avatar>
+        </q-td>
+      </template>
+
+      <template v-slot:body-cell-active="props">
+        <q-td :props="props">
+          <q-icon name="check_circle_outline" size="35px" color="green" />
+        </q-td>
+      </template>
+    </q-table>
   </div>
 </template>
 
@@ -10,140 +30,111 @@ export default {
     return {
       columns: [
         {
-          name: 'name',
-          required: true,
-          label: 'Dessert (100g serving)',
+          name: 'avatar',
+          label: 'Avatar',
           align: 'left',
-          field: row => row.name,
-          format: val => `${val}`,
+          field: 'avatar',
           sortable: true
         },
         {
-          name: 'calories',
-          align: 'center',
-          label: 'Calories',
-          field: 'calories',
+          name: 'name',
+          label: 'Name',
+          align: 'left',
+          field: 'name',
           sortable: true
         },
-        { name: 'fat', label: 'Fat (g)', field: 'fat', sortable: true },
-        { name: 'carbs', label: 'Carbs (g)', field: 'carbs' },
-        { name: 'protein', label: 'Protein (g)', field: 'protein' },
-        { name: 'sodium', label: 'Sodium (mg)', field: 'sodium' },
         {
-          name: 'calcium',
-          label: 'Calcium (%)',
-          field: 'calcium',
-          sortable: true,
-          sort: (a, b) => parseInt(a, 10) - parseInt(b, 10)
+          name: 'branch',
+          label: 'Branch',
+          align: 'left',
+          field: 'branch',
+          sortable: true
         },
         {
-          name: 'iron',
-          label: 'Iron (%)',
-          field: 'iron',
-          sortable: true,
-          sort: (a, b) => parseInt(a, 10) - parseInt(b, 10)
+          name: 'active',
+          label: 'Active',
+          align: 'left',
+          field: 'active',
+          sortable: true
+        },
+        {
+          name: 'user_type',
+          label: 'User Type',
+          align: 'left',
+          field: 'user_type',
+          sortable: true
         }
       ],
       data: [
         {
-          name: 'Frozen Yogurt',
-          calories: 159,
-          fat: 6.0,
-          carbs: 24,
-          protein: 4.0,
-          sodium: 87,
-          calcium: '14%',
-          iron: '1%'
+          avatar: '1',
+          name: 'Juan Dela Cruz',
+          branch: 'Head Office',
+          active: true,
+          user_type: 'Administrator'
         },
         {
-          name: 'Ice cream sandwich',
-          calories: 237,
-          fat: 9.0,
-          carbs: 37,
-          protein: 4.3,
-          sodium: 129,
-          calcium: '8%',
-          iron: '1%'
+          avatar: '2',
+          name: 'Juan Dela Cruz',
+          branch: 'Head Office',
+          active: true,
+          user_type: 'Administrator'
         },
         {
-          name: 'Eclair',
-          calories: 262,
-          fat: 16.0,
-          carbs: 23,
-          protein: 6.0,
-          sodium: 337,
-          calcium: '6%',
-          iron: '7%'
+          avatar: '3',
+          name: 'Juan Dela Cruz',
+          branch: 'Head Office',
+          active: true,
+          user_type: 'Administrator'
         },
         {
-          name: 'Cupcake',
-          calories: 305,
-          fat: 3.7,
-          carbs: 67,
-          protein: 4.3,
-          sodium: 413,
-          calcium: '3%',
-          iron: '8%'
+          avatar: '4',
+          name: 'Juan Dela Cruz',
+          branch: 'Head Office',
+          active: true,
+          user_type: 'Administrator'
         },
         {
-          name: 'Gingerbread',
-          calories: 356,
-          fat: 16.0,
-          carbs: 49,
-          protein: 3.9,
-          sodium: 327,
-          calcium: '7%',
-          iron: '16%'
+          avatar: '5',
+          name: 'Juan Dela Cruz',
+          branch: 'Head Office',
+          active: true,
+          user_type: 'Administrator'
         },
         {
-          name: 'Jelly bean',
-          calories: 375,
-          fat: 0.0,
-          carbs: 94,
-          protein: 0.0,
-          sodium: 50,
-          calcium: '0%',
-          iron: '0%'
+          avatar: '6',
+          name: 'Juan Dela Cruz',
+          branch: 'Head Office',
+          active: true,
+          user_type: 'Administrator'
         },
         {
-          name: 'Lollipop',
-          calories: 392,
-          fat: 0.2,
-          carbs: 98,
-          protein: 0,
-          sodium: 38,
-          calcium: '0%',
-          iron: '2%'
+          avatar: '7',
+          name: 'Juan Dela Cruz',
+          branch: 'Head Office',
+          active: true,
+          user_type: 'Administrator'
         },
         {
-          name: 'Honeycomb',
-          calories: 408,
-          fat: 3.2,
-          carbs: 87,
-          protein: 6.5,
-          sodium: 562,
-          calcium: '0%',
-          iron: '45%'
+          avatar: '8',
+          name: 'Juan Dela Cruz',
+          branch: 'Head Office',
+          active: true,
+          user_type: 'Administrator'
         },
         {
-          name: 'Donut',
-          calories: 452,
-          fat: 25.0,
-          carbs: 51,
-          protein: 4.9,
-          sodium: 326,
-          calcium: '2%',
-          iron: '22%'
+          avatar: '9',
+          name: 'Juan Dela Cruz',
+          branch: 'Head Office',
+          active: true,
+          user_type: 'Administrator'
         },
         {
-          name: 'KitKat',
-          calories: 518,
-          fat: 26.0,
-          carbs: 65,
-          protein: 7,
-          sodium: 54,
-          calcium: '12%',
-          iron: '6%'
+          avatar: '10',
+          name: 'Juan Dela Cruz',
+          branch: 'Head Office',
+          active: true,
+          user_type: 'Administrator'
         }
       ]
     }
