@@ -50,9 +50,14 @@ export default {
   data: () => ({
     routes: [
       {
-        title: 'Users',
+        title: 'Applicants',
         icon: 'link',
-        path: '/users'
+        path: '/applicants/dashboard'
+      },
+      {
+        title: 'Clients',
+        icon: 'link',
+        path: '/clients'
       },
       {
         title: 'Keywords',
@@ -60,14 +65,14 @@ export default {
         path: '/keywords'
       },
       {
-        title: 'Link 3',
+        title: 'Users',
         icon: 'link',
-        path: '#'
+        path: '/users'
       },
       {
-        title: 'Link 4',
+        title: 'Requirement Templates',
         icon: 'link',
-        path: '#'
+        path: '/requirement-templates'
       }
     ]
   })

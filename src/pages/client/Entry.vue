@@ -4,8 +4,11 @@
       <router-view />
     </q-page>
 
-    <create-dialog />
     <edit-dialog />
+    <create-branch-dialog />
+    <edit-branch-dialog />
+    <create-position-dialog />
+    <edit-position-dialog />
     <delete-dialog />
   </layout>
 </template>
@@ -14,8 +17,11 @@
 export default {
   components: {
     layout: () => import('layouts/MainLayout'),
-    createDialog: () => import('./Create'),
     editDialog: () => import('./Edit'),
+    createBranchDialog: () => import('./branch/Create'),
+    editBranchDialog: () => import('./branch/Edit'),
+    createPositionDialog: () => import('./position/Create'),
+    editPositionDialog: () => import('./position/Edit'),
     deleteDialog: () => import('./Delete')
   }
 }
