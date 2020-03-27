@@ -31,9 +31,9 @@
           </q-card-section>
           <q-card-section>
             <div class="row justify-between">
-              <div><q-input outlined v-model="text" label="Last Name" /></div>
-              <div><q-input outlined v-model="text" label="First Name" /></div>
-              <div><q-input outlined v-model="text" label="Middle Name" /></div>
+              <div><q-input outlined label="Last Name" /></div>
+              <div><q-input outlined label="First Name" /></div>
+              <div><q-input outlined label="Middle Name" /></div>
             </div>
           </q-card-section>
           <q-card-actions>

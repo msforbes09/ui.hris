@@ -43,7 +43,7 @@ module.exports = function(ctx) {
       directives: [],
 
       // Quasar plugins
-      plugins: []
+      plugins: ['Notify']
     },
 
     // https://quasar.dev/quasar-cli/cli-documentation/supporting-ie
@@ -51,6 +51,9 @@ module.exports = function(ctx) {
 
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
+      env: {
+        API: JSON.stringify('http://local.hris/'),
+      },
       vueRouterMode: 'history', // available values: 'hash', 'history'
 
       // showProgress: false,

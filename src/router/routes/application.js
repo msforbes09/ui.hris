@@ -1,6 +1,9 @@
 export default {
   path: '/applications',
   component: () => import('pages/application/Entry.vue'),
+  meta: {
+    requiresAuth: true
+  },
   children: [
     {
       path: '',

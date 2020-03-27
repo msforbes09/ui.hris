@@ -16,8 +16,7 @@ const routes = [
   requirement_template,
   {
     path: '/',
-    name: 'dashboard',
-    component: () => import('pages/Index.vue')
+    redirect: '/applicants/dashboard'
   }
 ]
 
