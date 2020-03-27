@@ -11,9 +11,9 @@
 
         <q-separator />
 
-        <q-card-content>
+        <q-card-section>
           <router-view />
-        </q-card-content>
+        </q-card-section>
       </q-card>
     </q-page>
   </layout>
