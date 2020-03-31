@@ -67,7 +67,10 @@ export default {
       this.$router.push({ name: 'login' })
     },
     submit () {
-      this.$store.commit('isLoading', true)
+      this.$q.loading.show({
+        message: "Resetting password..."
+      })
+
       this.$store.dispatch('auth/resetPassword',
         {
           email: this.email,
@@ -76,7 +79,7 @@ export default {
           token: this.token
         })
         .then(() => this.$store.commit('auth/showSuccess', 'Password reset successfully.'))
-        .finally(() => this.$store.commit('isLoading', false))
+        .finally(() => this.$q.loading.hide())
     }
   },
   destroyed () {

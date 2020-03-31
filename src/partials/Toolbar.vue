@@ -26,10 +26,13 @@ export default {
       this.$store.commit('app/drawer', !this.$store.getters['app/drawer'])
     },
     logout() {
-      this.$store.commit('isLoading', true)
+      this.$q.loading.show({
+        message: "Logging out..."
+      })
+
       this.$store.dispatch('auth/logout')
         .then(() => this.$router.push({name: 'login'}))
-        .finally(() => this.$store.commit('isLoading', false))
+        .finally(() => this.$q.loading.hide())
     }
   }
 }

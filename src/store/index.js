@@ -32,17 +32,10 @@ export default new Vuex.Store({
       requirement_template
     },
     state: {
-      error: new Error(),
-      loading: false
-    },
-    mutations: {
-      isLoading(state, payload) {
-        state.loading = payload
-      }
+      error: new Error()
     },
     actions: {},
     getters: {
-      error: state => state.error,
-      loading: state => state.loading
+      error: state => state.error
     }
 })

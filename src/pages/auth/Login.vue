@@ -50,13 +50,16 @@ export default {
   },
   methods: {
     login() {
-      this.$store.commit('isLoading', true)
+      this.$q.loading.show({
+        message: "Verifying Credentials..."
+      })
+
       this.$store.dispatch('auth/login', {username: this.username, password: this.password})
         .then(() => this.$router.push({
           [this.$route.query.redirect ? 'path' : 'name']
             : this.$route.query.redirect ?? 'applicantDashboard'
         }))
-        .finally(() => this.$store.commit('isLoading', false))
+        .finally(() => this.$q.loading.hide())
     }
   },
   destroyed () {

@@ -40,10 +40,13 @@ export default {
       this.$router.push({ name: 'login'})
     },
     submit () {
-      this.$store.commit('isLoading', true)
+      this.$q.loading.show({
+        message: "Verifying Email..."
+      })
+
       this.$store.dispatch('auth/forgetPassword', {email: this.email})
         .then(() => this.$store.commit('auth/showSuccess', 'Password reset email sent.'))
-        .finally(() => this.$store.commit('isLoading', false))
+        .finally(() => this.$q.loading.hide())
     }
   },
   destroyed () {
