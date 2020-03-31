@@ -12,7 +12,7 @@
 
       <q-card-actions>
         <q-space />
-        <q-btn @click="close">Confirm</q-btn>
+        <q-btn @click="confirm">Confirm</q-btn>
         <q-btn @click="close">Cancel</q-btn>
       </q-card-actions>
 
@@ -28,6 +28,10 @@ export default {
     }
   },
   methods: {
+    confirm () {
+      this.$store.dispatch('keyword/delete')
+        .then(() => this.close())
+    },
     close () {
       this.$store.commit('keyword/closeDialogs')
     }
