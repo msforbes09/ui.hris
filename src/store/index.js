@@ -4,6 +4,7 @@ import Error from './../helper/Error'
 
 import app from './modules/app'
 import auth from './modules/auth'
+import user from './modules/user'
 import keyword from './modules/keyword'
 import applicant from './modules/applicant'
 import application from './modules/application'
@@ -25,6 +26,7 @@ export default new Vuex.Store({
     modules: {
       app,
       auth,
+      user,
       keyword,
       applicant,
       application,
