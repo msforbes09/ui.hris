@@ -17,8 +17,9 @@ export default {
       if (stat === 400) {
         Notify.create({ message, color })
       } else if (stat === 401) {
-        Notify.create({ message, color })
+        // Notify.create({ message, color })
         store.commit('auth/removeAuth')
+        router.push({name: 'login'})
       } else if (stat === 403) {
         Notify.create({ message, color })
       } else if (stat === 404) {
