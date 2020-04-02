@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import Error from './../helper/Error'
 
 import app from './modules/app'
 import auth from './modules/auth'
+import user from './modules/user'
 import keyword from './modules/keyword'
 import applicant from './modules/applicant'
 import application from './modules/application'
@@ -20,22 +22,22 @@ Vue.use(Vuex)
  * with the Store instance.
  */
 
-export default function(/* { ssrContext } */) {
-  const Store = new Vuex.Store({
+export default new Vuex.Store({
     modules: {
       app,
       auth,
+      user,
       keyword,
       applicant,
       application,
       client,
       requirement_template
     },
-
-    // enable strict mode (adds overhead!)
-    // for dev mode only
-    strict: process.env.DEV
-  })
-
-  return Store
-}
+    state: {
+      error: new Error()
+    },
+    actions: {},
+    getters: {
+      error: state => state.error
+    }
+})

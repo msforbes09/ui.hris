@@ -9,8 +9,8 @@
           <q-avatar size="56px" class="q-mb-sm">
             <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
           </q-avatar>
-          <div class="text-weight-bold">Razvan Stoenescu</div>
-          <div>@rstoenescu</div>
+          <div class="text-weight-bold">{{user.name}}</div>
+          <div>{{user.branch.name}} | {{user.user_type.name}}</div>
         </div>
       </q-img>
 
@@ -45,6 +45,9 @@ export default {
       set(arg) {
         this.$store.commit('app/drawer', arg)
       }
+    },
+    user () {
+      return this.$store.getters['auth/user']
     }
   },
   data: () => ({

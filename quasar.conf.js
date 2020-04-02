@@ -6,7 +6,7 @@ module.exports = function(ctx) {
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
     // https://quasar.dev/quasar-cli/cli-documentation/boot-files
-    boot: ['axios'],
+    boot: ['axios', 'notify-default', 'loading-default', 'loading-bar-default'],
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
     css: ['app.scss'],
@@ -43,7 +43,7 @@ module.exports = function(ctx) {
       directives: [],
 
       // Quasar plugins
-      plugins: []
+      plugins: ['Notify', 'Loading', 'LoadingBar']
     },
 
     // https://quasar.dev/quasar-cli/cli-documentation/supporting-ie
@@ -51,6 +51,9 @@ module.exports = function(ctx) {
 
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
+      env: {
+        API: JSON.stringify('http://local.hris/'),
+      },
       vueRouterMode: 'history', // available values: 'hash', 'history'
 
       // showProgress: false,

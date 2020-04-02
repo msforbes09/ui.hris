@@ -1,6 +1,15 @@
 <template>
   <layout>
-    <q-page class="flex">
+    <q-page padding>
+      <div class="row q-mb-lg">
+
+        <div class="col">
+          <div class="text-h4">Keywords</div>
+          <div class="text-caption">Keyword Management</div>
+        </div>
+
+      </div>
+
       <router-view />
     </q-page>
 

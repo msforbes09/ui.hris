@@ -1,11 +1,14 @@
 export default {
   path: '/users',
-  component: () => import('pages/users/Entry.vue'),
+  component: () => import('pages/user/Entry.vue'),
+  meta: {
+    requiresAuth: true
+  },
   children: [
     {
       path: '',
       name: 'users',
-      component: () => import('pages/users/Users.vue')
+      component: () => import('pages/user/Index.vue')
     }
   ]
 }
